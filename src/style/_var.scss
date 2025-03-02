@@ -1,0 +1,50 @@
+$background-elements: #ffffff1a;
+$background-elements-second: #ffffff4d;
+$background-elements-third: #ffffff;
+
+$text-light: #ffffff;
+$text-dark: #070b33;
+
+$color-element: #1d2730;
+$color-element-second: #ffffff;
+
+$background-gradient: linear-gradient(
+  196.56deg,
+  rgba(0, 0, 0, 9.5e-5) 10.43%,
+  rgba(21, 5, 52, 0.641925) 30.66%,
+  rgba(0, 0, 0, 0.855327) 37.66%,
+  rgba(9, 1, 25, 0.95) 45.57%,
+  rgba(0, 0, 0, 0.95) 77.38%,
+  rgba(5, 1, 14, 0.95) 94.32%
+);
+$background-elements-gradient: linear-gradient(
+  180deg,
+  rgba(0, 0, 0, 0.0001) 0%,
+  rgba(4, 6, 26, 0.0001) 62.04%,
+  rgba(6, 9, 37, 0.558287) 76.68%,
+  #15072f 100%
+);
+$background-elements-gradient-second: linear-gradient(
+  90deg,
+  #bc1fef 0%,
+  #0035ff 100%
+);
+$background-elements-gradient-third: linear-gradient(
+  270deg,
+  #00b5ff 0%,
+  #632af7 53.01%,
+  #ff96f4 100%
+);
+$background-elements-gradient-fourth: linear-gradient(
+  140.91deg,
+  rgb(1, 180, 255) -2.8%,
+  rgba(1, 180, 255, 0.0001) 100%
+);
+
+$background-elements-gradient-fifrh: linear-gradient(
+  108.44deg,
+  rgba(253, 148, 244, 0) 25%,
+  #fd94f4 75.58%
+);
+
+$color-box-shadow: #0000007e;
