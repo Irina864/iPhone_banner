@@ -19,6 +19,10 @@
 
 Ссылка на макет: https://www.figma.com/design/V8JIRcYYWEgWPGAwFr5rok/Test-Task?node-id=0-1&p=f
 
+## Deploy
+
+https://harmonious-kashata-c8dd59.netlify.app/
+
 ## Команды
 
 ### Сборка проекта без оптимизации
