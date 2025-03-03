@@ -256,7 +256,7 @@ html {
   margin-bottom: calc(4 / 844 * 100vh);
   @include _screenIPhoneSE_8plus {
     max-width: calc(281 / 375 * 100vw);
-    margin-bottom: calc(4 / 667 * 100vh);
+    margin-bottom: calc(8 / 667 * 100vh);
   }
   .links__item {
     width: auto;
