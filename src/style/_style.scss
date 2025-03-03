@@ -23,44 +23,52 @@ html {
     background-image: url('../img/background.webp');
     background-size: cover;
     background-position: center top;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+
     @include _screenIPhoneSE_8plus {
       background-position: center -32px;
     }
+
     .banner__shadow {
       background-image: url('../img/shadow.svg');
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center top;
-      height: 100vh;
+      height: 100%;
       width: 100%;
     }
   }
 }
 
 .content {
-  // padding: calc(48 / 844 * 100vh) 0 calc(34 / 844 * 100vh);
-  height: calc(100% - env(safe-area-inset-top) - env(safe-area-inset-bottom));
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
+  height: calc(100% - env(safe-area-inset-top) - env(safe-area-inset-bottom));
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 100%;
   width: 100%;
   display: grid;
   grid-template-rows: calc(56 / 844 * 100vh) 1fr calc(18 / 844 * 100vh);
   background: $background-gradient;
+
   @include _screenIPhoneSE_8plus {
-    padding: 21px 0px 4px 0px;
-    // padding: calc(21 / 667 * 100vh) 0 calc(4 / 667 * 100vh);
+    padding: 21px 0 4px 0;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    height: calc(100% - env(safe-area-inset-top) - env(safe-area-inset-bottom));
   }
+
   .content__close {
     padding: calc(16 / 390 * 100vw);
     width: 100%;
+
     @include _screenIPhoneSE_8plus {
       padding: calc(16 / 375 * 100vw);
     }
   }
+
   .footer {
     width: 100%;
     @include flex(row, center, center);
