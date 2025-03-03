@@ -23,13 +23,12 @@ html {
     background-image: url('../img/background.webp');
     background-size: cover;
     background-position: center top;
+    padding: calc(48 / 844 * 100vh) 0 calc(34 / 844 * 100vh) 0;
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
-
     @include _screenIPhoneSE_8plus {
       background-position: center -32px;
     }
-
     .banner__shadow {
       background-image: url('../img/shadow.svg');
       background-repeat: no-repeat;
@@ -42,6 +41,7 @@ html {
 }
 
 .content {
+  padding: calc(48 / 844 * 100vh) 0 calc(34 / 844 * 100vh) 0;
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
   height: calc(100% - env(safe-area-inset-top) - env(safe-area-inset-bottom));
@@ -54,7 +54,7 @@ html {
   background: $background-gradient;
 
   @include _screenIPhoneSE_8plus {
-    padding: 21px 0 4px 0;
+    padding: calc(21 / 667 * 100vh) 0 calc(4 / 667 * 100vh);
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
     height: calc(100% - env(safe-area-inset-top) - env(safe-area-inset-bottom));
