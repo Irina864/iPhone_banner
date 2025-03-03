@@ -29,7 +29,7 @@
           <section class="access__select">
             <form name="form" class="form">
               <div class="form__group" role="group">
-                <label for="yearly" class="form__item">
+                <div class="form__item">
                   <input
                     class="form__input"
                     name="access"
@@ -37,18 +37,18 @@
                     value="https://apple.com/"
                     id="yearly"
                   />
-                  <div class="form__label form__label_best">
-                    <div class="form__title-wrap">
-                      <p class="form__title"></p>
-                      <p class="form__note"></p>
-                    </div>
-                    <div class="form__price"></div>
-                  </div>
+                  <label for="yearly" class="form__label form__label_best">
+                    <span class="form__title-wrap">
+                      <span class="form__title"></span>
+                      <span class="form__note"></span>
+                    </span>
+                    <span class="form__price"></span>
+                  </label>
                   <div class="form__notification-wrap">
                     <div class="form__notification"></div>
                   </div>
-                </label>
-                <label for="weekly" class="form__item">
+                </div>
+                <div class="form__item">
                   <input
                     class="form__input"
                     name="access"
@@ -57,13 +57,13 @@
                     id="weekly"
                     checked
                   />
-                  <div class="form__label">
-                    <div class="form__title-wrap">
-                      <p class="form__title"></p>
-                    </div>
-                    <div class="form__price"></div>
-                  </div>
-                </label>
+                  <label for="weekly" class="form__label">
+                    <span class="form__title-wrap">
+                      <span class="form__title"></span>
+                    </span>
+                    <span class="form__price"></span>
+                  </label>
+                </div>
               </div>
               <a
                 class="form__link"

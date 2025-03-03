@@ -6,6 +6,12 @@ html {
   overflow: hidden;
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 .banner {
   position: absolute;
   top: 0;
@@ -41,7 +47,6 @@ html {
   @include _screenIPhoneSE_8plus {
     padding: 21px 0px 4px 0px;
   }
-
   .content__close {
     padding: 16px;
     width: 100%;
@@ -109,7 +114,9 @@ html {
   }
   .benefit__text {
     @extend %fontBenefit;
-    white-space: nowrap;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 
@@ -136,7 +143,8 @@ html {
       min-height: 56px;
       width: 100%;
       display: grid;
-      grid-template-columns: 68% 1fr;
+      grid-template-columns: 66.5% 1fr;
+      gap: 5px;
       align-items: center;
       background-color: $background-elements;
       border-radius: 100px;
@@ -148,21 +156,21 @@ html {
       border-top: 1px solid rgba(253, 148, 244, 0.272);
     }
     .form__title-wrap {
+      width: 100%;
       .form__title {
+        width: 100%;
         @extend %fontRadioTitle;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
+        white-space: nowrap;
       }
       .form__note {
+        width: 100%;
         @extend %fontRadioText;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
+        white-space: nowrap;
       }
     }
     .form__price {
       @extend %fontRadioText;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
+      white-space: nowrap;
     }
     .form__input:checked + .form__label {
       border-top: none;
@@ -227,10 +235,12 @@ html {
   margin-bottom: 4px;
   @include _scaleScreenElements;
   .links__item {
+    width: auto;
     list-style-type: none;
     padding: 0;
     margin: 0;
     .links__href {
+      width: auto;
       @extend %fontLink;
       white-space: nowrap;
     }
