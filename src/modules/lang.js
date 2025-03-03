@@ -14,6 +14,7 @@ const lang =
   params.get('lang') || navigator.language.slice(0, 2) || defaultLang;
 
 const selectedLang = languages[lang] ? languages[lang] : languages[defaultLang];
+export const currentLang = languages[lang] ? lang : defaultLang;
 
 fetch(selectedLang)
   .then((response) => response.json())

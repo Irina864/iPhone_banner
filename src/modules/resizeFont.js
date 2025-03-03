@@ -1,11 +1,8 @@
-const defaultLang = 'en';
-
-const params = new URLSearchParams(window.location.search);
-const lang =
-  params.get('lang') || navigator.language.slice(0, 2) || defaultLang;
+import { currentLang } from './lang';
 
 function resizeFont(element, container, ratioElems) {
-  if (!element || !container || lang === 'en') {
+  if (!element || !container || currentLang === 'en') {
+    element.removeAttribute('style');
     return;
   }
 
@@ -34,13 +31,6 @@ function resizeFont(element, container, ratioElems) {
     fontSize -= 1;
     testElement.style.fontSize = fontSize + 'px';
     testWidth = testElement.getBoundingClientRect().width;
-    console.log(
-      'после',
-      testWidth,
-      availableWidth,
-      fontSize,
-      testWidth > availableWidth && fontSize > 10
-    );
   }
 
   element.style.fontSize = fontSize + 'px';
