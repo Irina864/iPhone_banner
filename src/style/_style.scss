@@ -2,7 +2,7 @@ body,
 html {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -14,6 +14,7 @@ html {
 
 @media (orientation: portrait) {
   .banner {
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -37,7 +38,10 @@ html {
 }
 
 .content {
-  padding: calc(48 / 844 * 100vh) 0 calc(34 / 844 * 100vh);
+  // padding: calc(48 / 844 * 100vh) 0 calc(34 / 844 * 100vh);
+  height: calc(100% - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -48,7 +52,7 @@ html {
   background: $background-gradient;
   @include _screenIPhoneSE_8plus {
     padding: 21px 0px 4px 0px;
-    padding: calc(21 / 667 * 100vh) 0 calc(4 / 667 * 100vh);
+    // padding: calc(21 / 667 * 100vh) 0 calc(4 / 667 * 100vh);
   }
   .content__close {
     padding: calc(16 / 390 * 100vw);
