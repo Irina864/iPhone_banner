@@ -2,8 +2,14 @@ body,
 html {
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 .banner {
@@ -23,28 +29,31 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
-    height: 100%;
+    height: 100vh;
     width: 100%;
   }
 }
 
 .content {
-  padding: 48px 0 34px 0;
+  padding: calc(48 / 844 * 100vh) 0 calc(34 / 844 * 100vh);
   position: absolute;
   bottom: 0;
   left: 0;
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: 56px 1fr 18px;
+  grid-template-rows: calc(56 / 844 * 100vh) 1fr calc(18 / 844 * 100vh);
   background: $background-gradient;
   @include _screenIPhoneSE_8plus {
     padding: 21px 0px 4px 0px;
+    padding: calc(21 / 667 * 100vh) 0 calc(4 / 667 * 100vh);
   }
-
   .content__close {
-    padding: 16px;
+    padding: calc(16 / 390 * 100vw);
     width: 100%;
+    @include _screenIPhoneSE_8plus {
+      padding: calc(16 / 375 * 100vw);
+    }
   }
   .footer {
     width: 100%;
@@ -54,12 +63,13 @@ html {
 }
 
 .access {
-  padding: 0 24px;
+  padding: 0 calc(24 / 390 * 100vw);
   width: 100%;
   @include flex(column, flex-end, center);
-  gap: 24px;
+  gap: calc(24 / 844 * 100vh);
   @include _screenIPhoneSE_8plus {
-    gap: 16px;
+    gap: calc(20 / 844 * 100vh);
+    padding: 0 calc(24 / 375 * 100vw);
   }
   .access__title {
     @extend %fontTitle;
@@ -68,35 +78,34 @@ html {
   }
   .access__benefits {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: calc(10 / 844 * 100vh);
     @include flex(row, center, center);
-    gap: 6px;
+    gap: calc(6 / 844 * 100vh);
     @include _screenIPhoneSE_8plus {
-      gap: 4px;
+      gap: calc(4 / 667 * 100vh);
+      margin-bottom: calc(12 / 844 * 100vh);
     }
   }
   .access__select {
     width: 100%;
-    margin-bottom: 34px;
+    margin-bottom: calc(34 / 844 * 100vh);
     @include _screenIPhoneSE_8plus {
-      margin-bottom: 28px;
+      margin-bottom: calc(32 / 667 * 100vh);
     }
   }
 }
 
 .benefit {
-  padding: 12px 8px;
-  max-width: 110px;
+  padding: calc(12 / 844 * 100vh) calc(8 / 390 * 100vw);
   width: 100%;
-  height: 146px;
+  height: calc(146 / 844 * 100vh);
   @include flex(column, flex-end, flex-start);
   border-radius: 16px;
   background-size: cover;
   background-position: center top;
-  @include _scaleScreenElements;
   @include _screenIPhoneSE_8plus {
     border-radius: 12px;
-    height: 139px;
+    height: calc(139 / 667 * 100vh);
   }
   &:nth-child(1) {
     background-image: url('../img/bg-item-1.svg');
@@ -109,21 +118,26 @@ html {
   }
   .benefit__text {
     @extend %fontBenefit;
-    white-space: nowrap;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 
 .form {
   width: 100%;
   @include flex(column, flex-end, center);
-  gap: 16px;
+  gap: calc(16 / 844 * 100vh);
   @include _screenIPhoneSE_8plus {
-    gap: 8px;
+    gap: calc(8 / 667 * 100vh);
   }
   .form__group {
     width: 100%;
     @include flex(column, flex-end, center);
-    gap: 8px;
+    gap: calc(8 / 844 * 100vh);
+    @include _screenIPhoneSE_8plus {
+      gap: calc(8 / 667 * 100vh);
+    }
   }
   .form__item {
     position: relative;
@@ -132,37 +146,42 @@ html {
       display: none;
     }
     .form__label {
-      padding: 9px 24px;
-      min-height: 56px;
+      padding: calc(9 / 844 * 100vh) calc(24 / 390 * 100vw);
+      min-height: calc(56 / 844 * 100vh);
       width: 100%;
       display: grid;
-      grid-template-columns: 68% 1fr;
+      grid-template-columns: 66.5% 1fr;
+      gap: calc(5 / 390 * 100vw);
       align-items: center;
       background-color: $background-elements;
       border-radius: 100px;
       position: relative;
-      @include _scaleScreenElements;
+      @include _screenIPhoneSE_8plus {
+        min-height: calc(56 / 667 * 100vh);
+        padding: calc(9 / 667 * 100vh) calc(24 / 375 * 100vw);
+        gap: calc(5 / 375 * 100vw);
+      }
     }
     .form__label_best {
       border-right: 1px solid rgba(1, 179, 255, 0.331);
       border-top: 1px solid rgba(253, 148, 244, 0.272);
     }
     .form__title-wrap {
+      width: 100%;
       .form__title {
+        width: 100%;
         @extend %fontRadioTitle;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
+        white-space: nowrap;
       }
       .form__note {
+        width: 100%;
         @extend %fontRadioText;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
+        white-space: nowrap;
       }
     }
     .form__price {
       @extend %fontRadioText;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
+      white-space: nowrap;
     }
     .form__input:checked + .form__label {
       border-top: none;
@@ -180,8 +199,8 @@ html {
   }
   .form__notification-wrap {
     position: absolute;
-    width: 119px;
-    height: 20px;
+    width: calc(119 / 844 * 100vh);
+    height: calc(20 / 390 * 100vw);
     top: -10px;
     right: 24px;
     border-radius: 100px;
@@ -189,25 +208,31 @@ html {
     z-index: 3;
     background: $background-elements-gradient-third;
     box-shadow: 0px 1px 6px 0px $color-box-shadow;
-    @include _scaleScreenElements;
+    @include _screenIPhoneSE_8plus {
+      width: calc(119 / 667 * 100vh);
+      height: calc(20 / 375 * 100vw);
+    }
   }
   .form__notification {
-    max-width: calc(119px - 1.1px * 2);
+    max-width: calc(119 / 844 * 100vh - 1.1px * 2);
     width: 100%;
-    height: calc(20px - 1.1px * 2);
+    height: calc(20 / 390 * 100vw - 1.1px * 2);
     @include flex(row, center, center);
     z-index: 5;
     border-radius: 100px;
     background: $background-elements-gradient-second;
     @extend %fontRadioNotification;
     white-space: nowrap;
-    @include _scaleScreenElements;
+    @include _screenIPhoneSE_8plus {
+      max-width: calc(119 / 667 * 100vh - 1.1px * 2);
+      height: calc(20 / 375 * 100vw - 1.1px * 2);
+    }
   }
   .form__link {
     width: 100%;
     text-decoration: none;
-    padding: 16px 24px;
-    height: 56px;
+    padding: calc(16 / 844 * 100vh) calc(24 / 390 * 100vw);
+    height: calc(56 / 844 * 100vh);
     width: 100%;
     @include flex(row, center, center);
     border-radius: 100px;
@@ -216,21 +241,29 @@ html {
     @extend %fontButtonTitle;
     color: $text-dark;
     white-space: nowrap;
-    @include _scaleScreenElements;
+    @include _screenIPhoneSE_8plus {
+      padding: calc(16 / 667 * 100vh) calc(24 / 375 * 100vw);
+      height: calc(56 / 667 * 100vh);
+    }
   }
 }
 
 .links {
-  max-width: 281px;
+  max-width: calc(281 / 390 * 100vw);
   width: 100%;
   @include flex(row, space-between, center);
-  margin-bottom: 4px;
-  @include _scaleScreenElements;
+  margin-bottom: calc(4 / 844 * 100vh);
+  @include _screenIPhoneSE_8plus {
+    max-width: calc(281 / 375 * 100vw);
+    margin-bottom: calc(4 / 667 * 100vh);
+  }
   .links__item {
+    width: auto;
     list-style-type: none;
     padding: 0;
     margin: 0;
     .links__href {
+      width: auto;
       @extend %fontLink;
       white-space: nowrap;
     }
